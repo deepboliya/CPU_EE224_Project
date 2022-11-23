@@ -10,6 +10,6 @@ general enough to solve complex problems. The architecture allows predicated ins
 and multiple load and store execution. There are three machine-code instruction formats (R, I, and J
 type) and a total of 14 instructions. 
 
-Regards </br>
-[Swadhin](https://github.com/Swadine), [Deep](https://github.com/deepboliya), Shambhavi, Scaria 
+_Regards_ </br>
+_[Swadhin](https://github.com/Swadine), [Deep](https://github.com/deepboliya), Shambhavi, Scaria_
 
