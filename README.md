@@ -11,5 +11,5 @@ and multiple load and store execution. There are three machine-code instruction 
 type) and a total of 14 instructions. 
 
 _Regards_ </br>
-_[Swadhin](https://github.com/Swadine), [Deep](https://github.com/deepboliya), Shambhavi, Scaria_
+_[Swadhin](https://github.com/Swadine), [Deep](https://github.com/deepboliya), [Shambhavi](https://github.com/shambhavii13), Scaria_
 
