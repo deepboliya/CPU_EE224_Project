@@ -1,0 +1,63 @@
+|DUT
+input_vector[0] => sign_ext_9:add_instance.input[0]
+input_vector[1] => sign_ext_9:add_instance.input[1]
+input_vector[2] => sign_ext_9:add_instance.input[2]
+input_vector[3] => sign_ext_9:add_instance.input[3]
+input_vector[4] => sign_ext_9:add_instance.input[4]
+input_vector[5] => sign_ext_9:add_instance.input[5]
+input_vector[6] => sign_ext_9:add_instance.input[6]
+input_vector[7] => sign_ext_9:add_instance.input[7]
+input_vector[8] => sign_ext_9:add_instance.input[8]
+output_vector[0] << sign_ext_9:add_instance.SE_out[0]
+output_vector[1] << sign_ext_9:add_instance.SE_out[1]
+output_vector[2] << sign_ext_9:add_instance.SE_out[2]
+output_vector[3] << sign_ext_9:add_instance.SE_out[3]
+output_vector[4] << sign_ext_9:add_instance.SE_out[4]
+output_vector[5] << sign_ext_9:add_instance.SE_out[5]
+output_vector[6] << sign_ext_9:add_instance.SE_out[6]
+output_vector[7] << sign_ext_9:add_instance.SE_out[7]
+output_vector[8] << sign_ext_9:add_instance.SE_out[8]
+output_vector[9] << sign_ext_9:add_instance.SE_out[9]
+output_vector[10] << sign_ext_9:add_instance.SE_out[10]
+output_vector[11] << sign_ext_9:add_instance.SE_out[11]
+output_vector[12] << sign_ext_9:add_instance.SE_out[12]
+output_vector[13] << sign_ext_9:add_instance.SE_out[13]
+output_vector[14] << sign_ext_9:add_instance.SE_out[14]
+output_vector[15] << sign_ext_9:add_instance.SE_out[15]
+
+
+|DUT|sign_ext_9:add_instance
+input[0] => SE_out[0].DATAIN
+input[1] => SE_out[1].DATAIN
+input[2] => SE_out[2].DATAIN
+input[3] => SE_out[3].DATAIN
+input[4] => SE_out[4].DATAIN
+input[5] => SE_out[5].DATAIN
+input[6] => SE_out[6].DATAIN
+input[7] => SE_out[7].DATAIN
+input[8] => SE_out[8].DATAIN
+input[8] => SE_out[15].DATAIN
+input[8] => SE_out[14].DATAIN
+input[8] => SE_out[13].DATAIN
+input[8] => SE_out[12].DATAIN
+input[8] => SE_out[11].DATAIN
+input[8] => SE_out[10].DATAIN
+input[8] => SE_out[9].DATAIN
+SE_out[0] <= input[0].DB_MAX_OUTPUT_PORT_TYPE
+SE_out[1] <= input[1].DB_MAX_OUTPUT_PORT_TYPE
+SE_out[2] <= input[2].DB_MAX_OUTPUT_PORT_TYPE
+SE_out[3] <= input[3].DB_MAX_OUTPUT_PORT_TYPE
+SE_out[4] <= input[4].DB_MAX_OUTPUT_PORT_TYPE
+SE_out[5] <= input[5].DB_MAX_OUTPUT_PORT_TYPE
+SE_out[6] <= input[6].DB_MAX_OUTPUT_PORT_TYPE
+SE_out[7] <= input[7].DB_MAX_OUTPUT_PORT_TYPE
+SE_out[8] <= input[8].DB_MAX_OUTPUT_PORT_TYPE
+SE_out[9] <= input[8].DB_MAX_OUTPUT_PORT_TYPE
+SE_out[10] <= input[8].DB_MAX_OUTPUT_PORT_TYPE
+SE_out[11] <= input[8].DB_MAX_OUTPUT_PORT_TYPE
+SE_out[12] <= input[8].DB_MAX_OUTPUT_PORT_TYPE
+SE_out[13] <= input[8].DB_MAX_OUTPUT_PORT_TYPE
+SE_out[14] <= input[8].DB_MAX_OUTPUT_PORT_TYPE
+SE_out[15] <= input[8].DB_MAX_OUTPUT_PORT_TYPE
+
+
