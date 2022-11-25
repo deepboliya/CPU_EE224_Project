@@ -39,7 +39,7 @@ temp <= std_logic_vector(to_unsigned( to_integer(unsigned(PC_in))+to_integer(sig
 
 when "11" =>
 
-if( Z='0') then
+if( Z='1') then
 temp <= std_logic_vector(to_unsigned( to_integer(unsigned(PC_in))+to_integer(signed(IR(5 downto 0))),16 )) ;
 else
 temp <= std_logic_vector(to_unsigned(1+to_integer(unsigned(PC_in)), 16 )) ;
