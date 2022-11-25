@@ -7,7 +7,7 @@ entity controller is
        clk,cflag,zflag: in std_logic;
 		 ir_e,cflag_e,zflag_e,pc_e,rf_we3,rf_re1,rf_re2,mem_we,mem_re,t_e:out std_logic;
        mux_rfa1, mux_rfa2,mux_rfa3: out std_logic_vector(1 downto 0); mux_rfd2,mux_alua,mux_tin,mux_tout,mem_out:out std_logic;
-		 mux_rfd1,mux_rfd3: out std_logic_vector( 2 downto 0);
+		 mux_rfd1,mux_rfd3,tobit: out std_logic_vector( 2 downto 0);
 		 mux_alub,mux_aluc,mem_add: out std_logic_vector(1 downto 0));
 		 
 		 
@@ -17,7 +17,7 @@ end entity controller;
 architecture hot of controller is
 
            type state is (S1, S2, S3, S4, S5, S6, S7, S8, S9, S10, S11, S12, S13, S14);
-			  
+			  shared variable i:integer:=0;
 			  signal present_s,next_s : state ;
 			  signal opcode:std_logic_vector(3 downto 0);
 			  signal cz: std_logic_vector(1 downto 0);
@@ -194,14 +194,15 @@ architecture hot of controller is
 					 t_e<='1';
 					 rf_re1<='1';
 				when s12=>
+				   
 				    mux_tout<='1';
 					 mem_add<="01";
 					 mem_re<='1';
 					 mux_rfa3<="11";
-					 rf_we3<='1';
+					 rf_we3<=IR(i);
 					 mem_out<='0';
 					 mux_rfd3<="010";
-					 rf_we3<='1';
+					 tobit<= std_logic_vector(to_unsigned(i,3));
 				when s13=>
 				    mux_tout<='0';
 					 mux_alua<='0';
@@ -214,8 +215,9 @@ architecture hot of controller is
 					 mem_add<="01";
 					 mux_rfa2<="11";
 					 mux_rfd2<='1';
-					 mem_we<='1';
+					 mem_we<=IR(i);
 					 rf_re2<='1';
+					 tobit<= std_logic_vector(to_unsigned(i,3));
 				when others=>
                 NULL;
 					 
@@ -264,7 +266,7 @@ architecture hot of controller is
 		
 	
 	next_state : process(present_s, opcode, cz, zflag, cflag)
-	variable i:integer:=0;	 
+		 
 	begin
 				 
 
@@ -342,7 +344,7 @@ architecture hot of controller is
 				next_s <= S14;
 			else
 			   next_s <= S3;
-				i:=0;	
+		   	i:=0;	
 			end if;
 				
 			when S14 =>
