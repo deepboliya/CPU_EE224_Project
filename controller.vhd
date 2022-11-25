@@ -4,29 +4,25 @@ use ieee.numeric_std.all;
 
 entity controller is
  port(IR: in std_logic_vector(15 downto 0);
-       clk,cflag,zflag: in std_logic
+       clk,cflag,zflag: in std_logic;
+		 ir_e,cflag_e,zflag_e,pc_e,rf_we3,rf_re1,rf_re2,mem_we,mem_re,t_e:out std_logic;
+       mux_rfa1, mux_rfa2,mux_rfa3: out std_logic_vector(1 downto 0); mux_rfd2,mux_alua,mux_tin,mux_tout,mem_out:out std_logic;
+		 mux_rfd1,mux_rfd3: out std_logic_vector( 2 downto 0);
+		 mux_alub,mux_aluc,mem_add: out std_logic_vector(1 downto 0));
 		 
-		 ir_e,cflag_e,zflag_e,pc_e,rf_we3,rf_re1,mem_we,mem_re,t_e,rf_re2:out std_logic;
-		 rf_a1,rf_a2,rf_a3,alu_sel:in std_logic_vector(2 downto 0);
-		 rf_d1,rf_d2,rf_d3:out std_logic_vector(15 downto 0);
---		 mem_address:out std_logic_vector(15 downto 0);
---		 mem_out:in std_logic_vector(15 downto 0);
-		 mux_rfa1, mux_rfa2,mux_rfa3 , mux_rfd2,mux_alua,mux_tin,mux_tout,mux_memout:out std_logic;
-		 mux_rfd1: out std_logic_vector( 2 downto 0);
-		 mux_rfd3, mux_alub,mux_aluc, mux_memin: out std_logic_vector(1 down to 0);
 		 
 		 
 end entity controller;
 
 architecture hot of controller is
 
-           type state is (S0, S1, S2, S3, S4, S5, S6, S7, S8, S9, S10, S11, S12, S13, S14, S15, S16, S17 );
+           type state is (S1, S2, S3, S4, S5, S6, S7, S8, S9, S10, S11, S12, S13, S14);
 			  
 			  signal present_s,next_s : state ;
 			  signal opcode:std_logic_vector(3 downto 0);
 			  signal cz: std_logic_vector(1 downto 0);
            signal R: std_logic_vector(7 downto 0)	:="00000000";
-			  			  
+			  		  
 	begin
 			
 			opcode(3 downto 0)<= IR(15 downto 12);
@@ -54,64 +50,206 @@ architecture hot of controller is
 		mem_we<='0';
 		cflag_e<='0';
 		zflag_e<='0';
-		mux_rfa1='0';
-		mux_rfa2='0';
-		mux_rfa3="00";
-		mux_rfd2='0';
-		mux_alua='0';
-		mux_tin='0';
-		mux_tout='0';
-		mux_memout='0';
-		mux_rfd1="000";
-		rf_a1<="000";
-		rf_a2<="000";
-		rf_a3<="000";
-		rf_d1<="000";
-		rf_d2<="000";
-		rf_d3<="000";
-      mux_rfd3="00";
-		mux_alub="00";
-		mux_aluc="00";
-		mux_memin="00";
-		alu_sel<="0000";
+		pc_e<='0';
+		
+		mux_rfa1<="00";
+		mux_rfa2<="00";
+		mux_rfa3<="00";
+		mux_rfd1<="000";
+		mux_rfd2<='0';
+		mux_rfd3<="000";
+		mem_add<="00";
+		mem_out<='0';
+		mux_alua<='0';
+		mux_alub<="00";
+		mux_aluc<="00";
+		mux_tin<='0';
+		mux_tout<='0';
+		
+--		mux_rfd1="000";
+--		rf_a1<="000";
+--		rf_a2<="000";
+--		rf_a3<="000";
+--		rf_d1<="000";
+--		rf_d2<="000";
+--		rf_d3<="000";
+--      mux_rfd3="00";
+--		mux_alub="00";
+--		mux_aluc="00";
+--		mux_memin="00";
+--		alu_sel<="0000";
 		
 		case present_s is
 		      
 				when s1=>
-				   mux_rfa1<='1';
-					mux_rfd1<="010";
-					mux_memin<="01";
-					mux_memout<='1';
-					rf_re1<='1';   
-				when s2 =>
-				   mux_rfa1<='0';
-					mux_rfa2<='0';
-					mux_rfa3<="00";
-					mux_we3<='1';
-					cflag_e<='1';
-					zflag_e<='1';
-					mux_rfd1<="000";
+				   mux_rfa1<="10";
+					mux_rfd1<="001";
+					rf_re1<='1';
+					
+					mem_re<='1';
+					mem_add<="10";
+					mem_out<='1';
+				   ir_e<='1';
+					
+				when s2=>
+				   mux_rfa1<="00";
+					mux_rfa2<="00";
+					mux_rfd1<="011";
 					mux_rfd2<='0';
 					mux_aluc<="10";
-					mux_rfd3<="01";
-				when s3 =>
-				   pc_e<='1';
-					mux_rfa1<='1';
-					mux_rfd1<="001";
-				when s4 =>	
-			      mux_rfa1<='0';	
-					mux_rfd1<= "000";
-					mux_alub<="01";
-					mux_aluc<="01";
-					mux_rfd3 <="01";
+					mux_rfd3<="001";
+					mux_alua<='1';
+					mux_alub<="00";
+					rf_re1<='1';
+					rf_re2<='1';
+		         rf_we3<='1';
+					cflag_e<='1';
+					zflag_e<='1';
+					
+				when s3=>
+				   mux_rfa1<="10";
+					mux_rfd1<="000";
+					rf_re1<='1';
+					pc_e<='1';
+					mux_rfa3<="00";
+					mux_rfd3<="100";
+					rf_we3<='1';
+					
+				   
+				when s4=>
+			      mux_rfa1<="00";
+					mux_rfd1<="011";
+					mux_alua<='1';
+			      mux_alub<="01";
+					rf_re1 <='1';
+					mux_aluc<="10";				
+					mux_rfd3<="001";
+					rf_we3<='1';
 					mux_rfa3<="10";
 					cflag_e<='1';
 					zflag_e<='1';
-				when s5=>
-				   mux_rfa1<="10";
+					
+				when s5 =>
+				    mux_rfa1<="01";
+					 mux_rfa3<="01";
+					 mux_rfd1<="011";
+					 mux_alua<='1';
+					 mux_alub<="01";
+					 mux_aluc<="01";
+					 mem_add<="00";
+					 mem_out<='0';
+					 mux_rfd3<="010";
+					 zflag_e<='1';
+					 rf_re1<='1';
+					 rf_we3<='1';
+					 mem_re<='1';
+				when s6 =>
+				    mux_rfa1<="01";
+					 mux_rfa2<="01";
+					 mux_rfd1<="011";
+					 mux_alua<='1';
+					 mux_alub<="01";
+					 mux_aluc<="01";
+					 mem_add<="00";
+					 mux_rfd2<='1';
+					 rf_re1<='1';
+					 rf_re2<='1';
+					 mem_we<='1';
+					 
+				when s7=>
+				    mux_rfa3<="01";
+					 mux_rfd3<="011";
+					 rf_we3<='1';
+					
+				when s8=>
+				    mux_rfa1<="00";
+					 mux_rfa2<="00";
+					 mux_rfd1<="011";
+					 mux_rfd2<='0';
+					 mux_alua<='1';
+					 mux_alub<="00";
+					 mux_aluc<="00";
+					 mux_tin<='0';
+					 t_e<='1';
+					 rf_re1<='1';
+					 rf_re2<='1';
+				when s9=>
+				    mux_rfa3<="01";
+					 mux_rfa1<="10";
+					 mux_rfd1<="100";
+					 mux_rfd3<="000";
+					 rf_we3<='1';
+					 rf_re1<='1';
+				when s10=>
+				    mux_rfa1<="01";
+					 mux_rfa3<="00";
+					 mux_rfd1<="100";
+					 mux_rfd3<="000";
+					 rf_we3<='1';
+					 rf_re1<='1';
+				when s11=>
+				    mux_rfa1<="00";
+					 mux_rfd1<="010";
+					 mux_tin<='1';
+					 t_e<='1';
+					 rf_re1<='1';
+				when s12=>
+				    mux_tout<='1';
+					 mem_add<="01";
+					 mem_re<='1';
+					 mux_rfa3<="11";
+					 rf_we3<='1';
+					 mem_out<='0';
+					 mux_rfd3<="010";
+					 rf_we3<='1';
+				when s13=>
+				    mux_tout<='0';
+					 mux_alua<='0';
+					 mux_alub<="10";
+					 mux_aluc<="00";
+					 mux_tin<='0';
+					 t_e<='1';
+				when s14=>
+				    mux_tout<='1';
+					 mem_add<="01";
+					 mux_rfa2<="11";
+					 mux_rfd2<='1';
+					 mem_we<='1';
+					 rf_re2<='1';
+				when others=>
+                NULL;
+					 
+					end case; 
+					 
+--				when s2 =>
+--				   mux_rfa1<='0';
+--					mux_rfa2<='0';
+--					mux_rfa3<="00";
+--					mux_we3<='1';
+--					cflag_e<='1';
+--					zflag_e<='1';
+--					mux_rfd1<="000";
+--					mux_rfd2<='0';
+--					mux_aluc<="10";
+--					mux_rfd3<="01";
+--				when s3 =>
+--				   pc_e<='1';
+--					mux_rfa1<='1';
+--					mux_rfd1<="001";
+--				when s4 =>	
+--			      mux_rfa1<='0';	
+--					mux_rfd1<= "000";
+--					mux_alub<="01";
+--					mux_aluc<="01";
+--					mux_rfd3 <="01";
+--					mux_rfa3<="10";
+--					cflag_e<='1';
+--					zflag_e<='1';
+--				when s5=>
+--				   mux_rfa1<="10";
 					
 					
-				   
+				end process;   
 					
 					
 				   
@@ -126,7 +264,7 @@ architecture hot of controller is
 		
 	
 	next_state : process(present_s, opcode, cz, zflag, cflag)
-	 variable i:integer:=0;
+	variable i:integer:=0;	 
 	begin
 				 
 
@@ -192,40 +330,26 @@ architecture hot of controller is
 			   if(opcode="0110") then
 				next_s <= S12;
 				else
-				next_s <= S15;
+				next_s <= S14;
 				end if;
 			when S12 => 
-			   if(R(i)='0') then 
-				next_s <= S14;
-				else
-				next_s <= S13;
-				
-				end if;
-				
+			   next_S <= S13;
 			when S13 =>
-			   next_s <= S14;
-				
-			when S14 =>
 		      if(i<7 and opcode= "0110") then
 			   next_s <= S12;
 				i:=i+1;
 				elsif(i<7 and opcode="0111") then
-				next_s <= S15;
-				else
-			   next_s <= S3;i=0;	
-				end if;
-				
-			when S15 =>
-			   if(R(i)='0') then
 				next_s <= S14;
-				else
-				next_s <= S16;
-				end if;
+			else
+			   next_s <= S3;
+				i:=0;	
+			end if;
 				
-			when S16 =>
-			   next_s <= S14;
-			   
+			when S14 =>
+		   next_s<= S13;
+				
 			
+		
 			when others =>
 				next_s <= S1;
 			end case;
