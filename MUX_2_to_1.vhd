@@ -3,8 +3,8 @@ use ieee.std_logic_1164.all;
 
 entity MUX_2_to_1 is
     port(
-        A0,A1: in std_logic_vector(15 downto 0);
-        
+        A0: in std_logic_vector(15 downto 0);
+        A1: in std_logic_vector(15 downto 0);
         S: in std_logic;
         Op: out std_logic_vector(15 downto 0)
     );
@@ -19,10 +19,6 @@ begin
 		Op<=A0;
 		when '1'=>
 		Op<=A1;
-
-		when others=>
-		Op<="0000000000000000";
-
 		end case;
 	end process ; 
 	
