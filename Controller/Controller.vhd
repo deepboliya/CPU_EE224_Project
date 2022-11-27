@@ -40,10 +40,10 @@ architecture hot of controller is
 							else 
 								null;
 							end if;
-							if (count_13 = 7 and next_s = s12) then
+							if (count_13 = 8 and next_s = s12) then
 								count_13 := 0;
 								present_s <= s3;
-							elsif (count_14 = 7 and next_s = s14) then
+							elsif (count_14 = 8 and next_s = s14) then
 								count_14 := 0;
 								present_s <= s3;
 							else
@@ -339,8 +339,6 @@ architecture hot of controller is
 			end case;
 	end process;
 	end architecture hot ;
-
-
 
 
 
