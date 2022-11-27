@@ -19,6 +19,8 @@ begin
 		Op<=A0;
 		when '1'=>
 		Op<=A1;
+	when others => 
+	Op<="0000000000000000";
 		end case;
 	end process ; 
 	
