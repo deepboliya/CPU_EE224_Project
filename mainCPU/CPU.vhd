@@ -9,7 +9,7 @@ end CPU;
 
 architecture main of CPU is
 
-	component datapath is
+	component Dataflow is
 		 port(IR_E,C_FLAG_E,Z_FLAG_E,PC_E,RF_WE3,RF_RE1,MEM_WE,MEM_RE,T_E,RF_RE2, MUX_RF_D2, MUX_ALU_A, MUX_T_IN, MUX_MEM_OUT: in std_logic;
 			MUX_RF_D1, MUX_RF_D3 : in std_logic_vector(2 downto 0);
 			MUX_ALU_B,MUX_ALU_C, MUX_MEM_IN, MUX_RF_A1, MUX_RF_A2, MUX_T_OUT, MUX_RF_A3 : in std_logic_vector(1 downto 0);
@@ -22,8 +22,8 @@ architecture main of CPU is
 	component controller is
 		port(IR: in std_logic_vector(15 downto 0);
        clk,cflag,zflag: in std_logic;
-		 ir_e,cflag_e,zflag_e,pc_e,rf_we3,rf_re1,rf_re2,mem_we,mem_re,t_e,mux_rfd2,mux_alua,mux_tin,mem_out:out std_logic;
-       mux_rfa1, mux_rfa2,mux_rfa3,mux_alub,mux_aluc,mem_add,mux_tout: out std_logic_vector(1 downto 0); 
+		 ir_e,cflag_e,zflag_e,pc_e,rf_we3,rf_re1,rf_re2,mem_we,mem_re,t_e,mux_rfd2,mux_alua,mux_tin,mux_mem_out:out std_logic;
+       mux_rfa1, mux_rfa2,mux_rfa3,mux_alub,mux_aluc,mux_mem_add,mux_tout: out std_logic_vector(1 downto 0); 
 		 mux_rfd1,mux_rfd3,tobit: out std_logic_vector( 2 downto 0));
 	end component;
 	
@@ -55,13 +55,13 @@ Ctrl: controller port map (
 								mux_rfd2=>mux_rfd2s,
 								mux_alua=>mux_aluas,
 								mux_tin=>mux_tins,
-								mem_out=>mem_outs,
+								mux_mem_out=>mem_outs,
 								mux_rfa1=>mux_rfa1s,
 								mux_rfa2=>mux_rfa2s,
 								mux_rfa3=>mux_rfa3s,
 								mux_alub=>mux_alubs,
 								mux_aluc=>mux_alucs,
-								mem_add=>mem_adds,
+								mux_mem_add=>mem_adds,
 								mux_tout=>mux_touts,
 								mux_rfd1=>mux_rfd1s,
 								mux_rfd3=>mux_rfd3s,
@@ -69,7 +69,7 @@ Ctrl: controller port map (
 								);
 
 --Datapath
-DP: datapath port map (IR_E=>IR_es,
+DP: Dataflow port map (IR_E=>IR_es,
                        C_FLAG_E=>cflag_s,
                        Z_FLAG_E=>zflag_s,
                        PC_E=>pc_es,
