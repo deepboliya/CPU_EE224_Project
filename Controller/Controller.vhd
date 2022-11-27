@@ -6,9 +6,9 @@ entity controller is
  port(IR: in std_logic_vector(15 downto 0);
        clk,cflag,zflag: in std_logic;
 		 ir_e,cflag_e,zflag_e,pc_e,rf_we3,rf_re1,rf_re2,mem_we,mem_re,t_e:out std_logic;
-       mux_rfa1, mux_rfa2,mux_rfa3: out std_logic_vector(1 downto 0); mux_rfd2,mux_alua,mux_tin,mem_out:out std_logic;
+       mux_rfa1, mux_rfa2,mux_rfa3: out std_logic_vector(1 downto 0); mux_rfd2,mux_alua,mux_tin,mux_mem_out:out std_logic;
 		 mux_rfd1,mux_rfd3,tobit: out std_logic_vector( 2 downto 0);
-		 mux_alub,mux_aluc,mem_add,mux_tout: out std_logic_vector(1 downto 0));
+		 mux_alub,mux_aluc,mux_mem_add,mux_tout: out std_logic_vector(1 downto 0));
 		 
 		 
 		 
@@ -72,8 +72,8 @@ architecture hot of controller is
 		mux_rfd1<="000";
 		mux_rfd2<='0';
 		mux_rfd3<="000";
-		mem_add<="00";
-		mem_out<='0';
+		mux_mem_add<="00";
+		mux_mem_out<='0';
 		mux_alua<='0';
 		mux_alub<="00";
 		mux_aluc<="00";
@@ -102,8 +102,8 @@ architecture hot of controller is
 					rf_re1<='1';
 					
 					mem_re<='1';
-					mem_add<="10";
-					mem_out<='1';
+					mux_mem_add<="10";
+					mux_mem_out<='1';
 				   ir_e<='1';
 					
 				when s2=>
@@ -153,8 +153,8 @@ architecture hot of controller is
 					 mux_alua<='1';
 					 mux_alub<="01";
 					 mux_aluc<="01";
-					 mem_add<="00";
-					 mem_out<='0';
+					 mux_mem_add<="00";
+					 mux_mem_out<='0';
 					 mux_rfd3<="010";
 					 zflag_e<='1';
 					 rf_re1<='1';
@@ -167,7 +167,7 @@ architecture hot of controller is
 					 mux_alua<='1';
 					 mux_alub<="01";
 					 mux_aluc<="01";
-					 mem_add<="00";
+					 mux_mem_add<="00";
 					 mux_rfd2<='1';
 					 rf_re1<='1';
 					 rf_re2<='1';
@@ -214,11 +214,11 @@ architecture hot of controller is
 				when s12=>
 				   
 				    mux_tout<="01";
-					 mem_add<="01";
+					 mux_mem_add<="01";
 					 mem_re<='1';
 					 mux_rfa3<="11";
 					 rf_we3<=IR(count_13);
-					 mem_out<='0';
+					 mux_mem_out<='0';
 					 mux_rfd3<="010";
 					 tobit<= std_logic_vector(to_unsigned(count_13,3));
 				when s13=>
@@ -230,7 +230,7 @@ architecture hot of controller is
 					 t_e<='1';
 				when s14=>
 				    mux_tout<="01";
-					 mem_add<="01";
+					 mux_mem_add<="01";
 					 mux_rfa2<="11";
 					 mux_rfd2<='1';
 					 mem_we<=IR(count_14);
@@ -339,6 +339,8 @@ architecture hot of controller is
 			end case;
 	end process;
 	end architecture hot ;
+
+
 
 
 
