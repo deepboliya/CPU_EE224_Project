@@ -113,6 +113,7 @@ architecture hot of controller is
 					mux_rfd2<='0';
 					mux_aluc<="10";
 					mux_rfd3<="001";
+					mux_rfa3<="00";
 					mux_alua<='1';
 					mux_alub<="00";
 					rf_re1<='1';
@@ -126,10 +127,11 @@ architecture hot of controller is
 					mux_rfd1<="000";
 					rf_re1<='1';
 					pc_e<='1';
-					mux_rfa3<="00";
+					mux_rfa3<="11";
+					tobit<="111";
 					mux_rfd3<="100";
 					rf_we3<='1';
-					
+					mux_tout<="10";
 				   
 				when s4=>
 			      mux_rfa1<="00";
@@ -197,7 +199,8 @@ architecture hot of controller is
 					 rf_re1<='1';
 				when s10=>
 				    mux_rfa1<="01";
-					 mux_rfa3<="00";
+					 mux_rfa3<="11";
+					 tobit<="111";
 					 mux_rfd1<="100";
 					 mux_rfd3<="000";
 					 rf_we3<='1';
@@ -336,6 +339,7 @@ architecture hot of controller is
 			end case;
 	end process;
 	end architecture hot ;
+
 
 
  
