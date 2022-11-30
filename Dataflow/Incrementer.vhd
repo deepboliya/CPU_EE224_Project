@@ -7,7 +7,7 @@ entity Incrementer is
 port(
 
 PC_in,  IR , Z: in std_logic_vector( 15 downto 0);
-WE : in std_logic; clk : in std_logic;
+WE : in std_logic;
 PC_out : out std_logic_vector(15 downto 0)
 
 );
@@ -20,7 +20,7 @@ signal sel : std_logic_vector(1 downto 0 );
 signal temp: std_logic_vector(15 downto 0);
 
 begin
-storage: process(clk,PC_in,IR,Z,WE,sel,temp) is
+storage: process(PC_in,IR,Z,WE,sel,temp) is
 begin
 
 sel(0)<=  IR(15) and IR(14);
