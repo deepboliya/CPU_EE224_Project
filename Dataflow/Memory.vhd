@@ -12,33 +12,39 @@ end memory;
 
 architecture mem_arch of memory is
 	type mem_index is array(65535 downto 0) of std_logic_vector(15 downto 0);
-	signal mem: mem_index := (0=>"0100000000000001", 1=>"0100001000000011", 2=>"1100000001010100", 3=>"1101001001011100", 128=>"1111111111111111", 
-				129=>"1111111111111110", 130=>"1111111111111100", 131=>"1111111111111000", 132=>"1111111111110000", 133=>"1111111111100000", others => "0000000000000000");
+	signal mem: mem_index := (
+	0=>"0010000001010000",
+--	1=>"0000001000010000",
+	--1=>"1111111111111111",
+--	1=>"0101101010100000", 2=>"0000001010100000", 3=>"1100100101000001",4=>"0100001010100000",5=>"0000000000110000",6=>"0000101001110010",
+	others => "1111111111111111");
 begin
+
+  
 writing : process(WE, clk, address, Din)
 begin
-  if rising_edge(clk) then
+ -- if rising_edge(clk) then
     if WE='1' then
 	   mem(to_integer(unsigned(address)))<=Din;
 	 else
 	   null;
 	 end if;
-  else
-    null;
-  end if;
+  --else
+  --  null;
+  --end if;
 end process;
 
-reading:process(RE,clk)
+reading:process(RE,clk,mem,address)
 begin
-if rising_edge(clk) then
+--if rising_edge(clk) then
     if RE='1' then 
 	Dout<=mem(to_integer(unsigned(address)));
  else
 	   null;
 	 end if;
-  else
-    null;
-  end if;
+ -- else
+   -- null;
+ -- end if;
 end process;
 	
 end mem_arch;
