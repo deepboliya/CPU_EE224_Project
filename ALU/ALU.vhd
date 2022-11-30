@@ -33,10 +33,10 @@ architecture Structure_ALU of ALU is
 ---------------------------------------------------------------------------------------------------------------------------------	
 	function Carry_16(A : in std_logic_vector(15 downto 0); B : in std_logic_vector(15 downto 0)) return std_logic is
 		variable C : std_logic_vector(16 downto 0) := (others => '0');
-		variable S : std_logic_vector(15 downto 0);
+--		variable S : std_logic_vector(15 downto 0);
 	begin
 		Loop1: for i in 0 to 15 loop
-			S(i) := A(i) xor B(i) xor C(i);
+--			S(i) := A(i) xor B(i) xor C(i);
 			C(i+1) := ( A(i) and C(i) ) or ( ( A(i) xor C(i) ) and B(i) );
 		end loop Loop1;
 		return C(16);
@@ -65,6 +65,7 @@ begin
 				ALU_Zero <= '0';
 			end if;
 		elsif ALU_S = "0010" then
+		   ALU_CARRY<='0';--carry enable zero so we dont care
 			ALU_C <= NAND_16(ALU_A, ALU_B);		  
 			if NAND_16(ALU_A, ALU_B) = "0000000000000000" then
 				ALU_Zero <= '1';
@@ -72,6 +73,7 @@ begin
 				ALU_Zero <= '0';
 			end if;
 		elsif ALU_S = "0100" then
+		   ALU_CARRY<='0';--carry enable will take care
 			ALU_C <= ADD_16(ALU_A, ALU_B);
 			if ADD_16(ALU_A, ALU_B) = "0000000000000000" then
 				ALU_Zero <= '1';
@@ -79,10 +81,16 @@ begin
 				ALU_Zero <= '0';
 			end if;
 		elsif ALU_S = "0101" or ALU_S = "0110" or ALU_S = "0111" then
+		   ALU_ZERO<='0';--zero enable will take care
+		   ALU_CARRY<='0';--carry enable will take care
 			ALU_C <= ADD_16(ALU_A, ALU_B);
 		elsif ALU_S = "1100" then
+		   ALU_CARRY<='0';--carry enable will take care
+			ALU_ZERO<='0';--zero enable will take care
 			ALU_C <= XOR_16(ALU_A, ALU_B);
 		else
+		   ALU_ZERO<='0';--zero enable will take care
+		   ALU_CARRY<='0';--carry enable will take care
 			ALU_C <= "0000000000000000";
 		end if;
 	end process ALU_Process;
