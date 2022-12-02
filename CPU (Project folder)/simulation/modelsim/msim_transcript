@@ -1,0 +1,284 @@
+# Reading pref.tcl
+# do DUT_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {C:/Users/SHAMBHAVI SHANKER/Desktop/214project/Sign_Ext_6.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 22:26:48 on Nov 30,2022
+# vcom -reportprogress 300 -93 -work work C:/Users/SHAMBHAVI SHANKER/Desktop/214project/Sign_Ext_6.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity sign_ext_6
+# -- Compiling architecture SE_Arch of sign_ext_6
+# End time: 22:26:48 on Nov 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/SHAMBHAVI SHANKER/Desktop/214project/Shifter_7bits.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 22:26:48 on Nov 30,2022
+# vcom -reportprogress 300 -93 -work work C:/Users/SHAMBHAVI SHANKER/Desktop/214project/Shifter_7bits.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity shifter_7bits
+# -- Compiling architecture arch of shifter_7bits
+# End time: 22:26:49 on Nov 30,2022, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/SHAMBHAVI SHANKER/Desktop/214project/Register_File.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 22:26:49 on Nov 30,2022
+# vcom -reportprogress 300 -93 -work work C:/Users/SHAMBHAVI SHANKER/Desktop/214project/Register_File.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity Register_File
+# -- Compiling architecture rb1 of Register_File
+# End time: 22:26:49 on Nov 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/SHAMBHAVI SHANKER/Desktop/214project/Register_16.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 22:26:49 on Nov 30,2022
+# vcom -reportprogress 300 -93 -work work C:/Users/SHAMBHAVI SHANKER/Desktop/214project/Register_16.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity Register_16
+# -- Compiling architecture Register_16_Arch of Register_16
+# End time: 22:26:49 on Nov 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/SHAMBHAVI SHANKER/Desktop/214project/Register_1.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 22:26:49 on Nov 30,2022
+# vcom -reportprogress 300 -93 -work work C:/Users/SHAMBHAVI SHANKER/Desktop/214project/Register_1.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity Register_1
+# -- Compiling architecture Register_1_Arch of Register_1
+# End time: 22:26:49 on Nov 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/SHAMBHAVI SHANKER/Desktop/214project/MUX_5_to_1.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 22:26:49 on Nov 30,2022
+# vcom -reportprogress 300 -93 -work work C:/Users/SHAMBHAVI SHANKER/Desktop/214project/MUX_5_to_1.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity MUX_5_to_1
+# -- Compiling architecture Struct of MUX_5_to_1
+# End time: 22:26:49 on Nov 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/SHAMBHAVI SHANKER/Desktop/214project/MUX_4_to_1.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 22:26:49 on Nov 30,2022
+# vcom -reportprogress 300 -93 -work work C:/Users/SHAMBHAVI SHANKER/Desktop/214project/MUX_4_to_1.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity MUX_4_to_1
+# -- Compiling architecture behavior of MUX_4_to_1
+# End time: 22:26:49 on Nov 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/SHAMBHAVI SHANKER/Desktop/214project/MUX_3_TO_1.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 22:26:49 on Nov 30,2022
+# vcom -reportprogress 300 -93 -work work C:/Users/SHAMBHAVI SHANKER/Desktop/214project/MUX_3_TO_1.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity MUX_3_to_1
+# -- Compiling architecture Struct of MUX_3_to_1
+# End time: 22:26:49 on Nov 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/SHAMBHAVI SHANKER/Desktop/214project/MUX_1_TO_5.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 22:26:49 on Nov 30,2022
+# vcom -reportprogress 300 -93 -work work C:/Users/SHAMBHAVI SHANKER/Desktop/214project/MUX_1_TO_5.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity MUX_1_TO_5
+# -- Compiling architecture Struct of MUX_1_to_5
+# End time: 22:26:49 on Nov 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/SHAMBHAVI SHANKER/Desktop/214project/MUX_1_TO_3.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 22:26:50 on Nov 30,2022
+# vcom -reportprogress 300 -93 -work work C:/Users/SHAMBHAVI SHANKER/Desktop/214project/MUX_1_TO_3.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity MUX_1_TO_3
+# -- Compiling architecture Struct of MUX_1_to_3
+# End time: 22:26:50 on Nov 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/SHAMBHAVI SHANKER/Desktop/214project/mux81.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 22:26:50 on Nov 30,2022
+# vcom -reportprogress 300 -93 -work work C:/Users/SHAMBHAVI SHANKER/Desktop/214project/mux81.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity mux81
+# -- Compiling architecture behavior of mux81
+# End time: 22:26:50 on Nov 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/SHAMBHAVI SHANKER/Desktop/214project/Memory.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 22:26:50 on Nov 30,2022
+# vcom -reportprogress 300 -93 -work work C:/Users/SHAMBHAVI SHANKER/Desktop/214project/Memory.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity memory
+# -- Compiling architecture mem_arch of memory
+# End time: 22:26:50 on Nov 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/SHAMBHAVI SHANKER/Desktop/214project/Incrementer.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 22:26:50 on Nov 30,2022
+# vcom -reportprogress 300 -93 -work work C:/Users/SHAMBHAVI SHANKER/Desktop/214project/Incrementer.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity Incrementer
+# -- Compiling architecture Incrementer_Arch of Incrementer
+# End time: 22:26:50 on Nov 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/SHAMBHAVI SHANKER/Desktop/214project/DUT.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 22:26:50 on Nov 30,2022
+# vcom -reportprogress 300 -93 -work work C:/Users/SHAMBHAVI SHANKER/Desktop/214project/DUT.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity DUT
+# -- Compiling architecture DutWrap of DUT
+# End time: 22:26:50 on Nov 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/SHAMBHAVI SHANKER/Desktop/214project/Dataflow.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 22:26:50 on Nov 30,2022
+# vcom -reportprogress 300 -93 -work work C:/Users/SHAMBHAVI SHANKER/Desktop/214project/Dataflow.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity Dataflow
+# -- Compiling architecture Dataflow_Arch of Dataflow
+# End time: 22:26:50 on Nov 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/SHAMBHAVI SHANKER/Desktop/214project/CPU.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 22:26:50 on Nov 30,2022
+# vcom -reportprogress 300 -93 -work work C:/Users/SHAMBHAVI SHANKER/Desktop/214project/CPU.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity CPU
+# -- Compiling architecture main of CPU
+# End time: 22:26:50 on Nov 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/SHAMBHAVI SHANKER/Desktop/214project/Controller.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 22:26:51 on Nov 30,2022
+# vcom -reportprogress 300 -93 -work work C:/Users/SHAMBHAVI SHANKER/Desktop/214project/Controller.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity controller
+# -- Compiling architecture hot of controller
+# End time: 22:26:51 on Nov 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/SHAMBHAVI SHANKER/Desktop/214project/ALU.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 22:26:51 on Nov 30,2022
+# vcom -reportprogress 300 -93 -work work C:/Users/SHAMBHAVI SHANKER/Desktop/214project/ALU.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity ALU
+# -- Compiling architecture Structure_ALU of ALU
+# End time: 22:26:51 on Nov 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vcom -93 -work work {C:/Users/SHAMBHAVI SHANKER/Desktop/214project/Testbench.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 22:26:51 on Nov 30,2022
+# vcom -reportprogress 300 -93 -work work C:/Users/SHAMBHAVI SHANKER/Desktop/214project/Testbench.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity Testbench
+# -- Compiling architecture Behave of Testbench
+# End time: 22:26:51 on Nov 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L fiftyfivenm -L rtl_work -L work -voptargs="+acc"  Testbench
+# vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L fiftyfivenm -L rtl_work -L work -voptargs=""+acc"" Testbench 
+# Start time: 22:26:51 on Nov 30,2022
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.testbench(behave)
+# Loading work.dut(dutwrap)
+# Loading ieee.numeric_std(body)
+# Loading work.cpu(main)
+# Loading work.controller(hot)
+# Loading work.dataflow(dataflow_arch)
+# Loading work.register_16(register_16_arch)
+# Loading work.mux_4_to_1(behavior)
+# Loading work.shifter_7bits(arch)
+# Loading work.sign_ext_6(se_arch)
+# Loading work.mux_5_to_1(struct)
+# Loading work.register_file(rb1)
+# Loading work.mux81(behavior)
+# Loading work.mux_1_to_5(struct)
+# Loading work.mux_1_to_3(struct)
+# Loading work.mux_3_to_1(struct)
+# Loading work.alu(structure_alu)
+# Loading work.register_1(register_1_arch)
+# Loading work.incrementer(incrementer_arch)
+# Loading work.memory(mem_arch)
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+#############  Autofindloop Analysis  ###############
+#############  Loop found at time 924 ns ###############
+#       Signal: /testbench/dut_instance/add_instance/DP/aluc0 @ sub-iteration 0 at Value unknown (C:/Users/SHAMBHAVI SHANKER/Desktop/214project/Dataflow.vhd:145)
+#       Signal: /testbench/dut_instance/add_instance/DP/Top @ sub-iteration 0 at Value unknown (C:/Users/SHAMBHAVI SHANKER/Desktop/214project/Dataflow.vhd:145)
+#       Signal: /testbench/dut_instance/add_instance/DP/T/stored_DIN @ sub-iteration 0 at Value unknown (C:/Users/SHAMBHAVI SHANKER/Desktop/214project/Register_16.vhd:16)
+#   Active process: /testbench/dut_instance/add_instance/DP/T/line__24 @ sub-iteration 1
+#     Source: C:/Users/SHAMBHAVI SHANKER/Desktop/214project/Dataflow.vhd:209
+#   Active process: /testbench/dut_instance/add_instance/DP/mux_tout/line__15 @ sub-iteration 1
+#     Source: C:/Users/SHAMBHAVI SHANKER/Desktop/214project/Dataflow.vhd:206
+#   Active process: /testbench/dut_instance/add_instance/DP/mux_tin/line__15 @ sub-iteration 1
+#     Source: C:/Users/SHAMBHAVI SHANKER/Desktop/214project/Dataflow.vhd:203
+#       Signal: /testbench/dut_instance/add_instance/DP/Tin @ sub-iteration 2 at Value unknown (C:/Users/SHAMBHAVI SHANKER/Desktop/214project/Dataflow.vhd:145)
+#       Signal: /testbench/dut_instance/add_instance/DP/Top0 @ sub-iteration 2 at Value unknown (C:/Users/SHAMBHAVI SHANKER/Desktop/214project/Dataflow.vhd:145)
+#       Signal: /testbench/dut_instance/add_instance/DP/Top @ sub-iteration 2 at Value unknown (C:/Users/SHAMBHAVI SHANKER/Desktop/214project/Dataflow.vhd:145)
+################# END OF LOOP #################
+# ** Error (suppressible): (vsim-3601) Iteration limit 5000 reached at time 924 ns.
+# End time: 22:27:01 on Nov 30,2022, Elapsed time: 0:00:10
+# Errors: 1, Warnings: 0
