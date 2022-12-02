@@ -66,9 +66,21 @@ architecture hot of controller is
 		zflag_e<='0';
 		pc_e<='0';
 		
-		mux_rfa1<="00";
-		mux_rfa2<="00";
-		mux_rfa3<="00";
+--		mux_rfa1<="00";
+--		mux_rfa2<="00";
+--		mux_rfa3<="00";
+--				mux_rfd1<="000";
+--		mux_rfd2<="00";
+--		mux_rfd3<="000";
+--		mux_mem_add<="00";
+--		mux_mem_out<="00";
+--		mux_alua<="00";
+--		mux_alub<="00";
+--		mux_aluc<="00";
+--		mux_tin<="00";
+--		mux_tout<="00";
+
+
 		mux_rfd1<="111";
 		mux_rfd2<="11";
 		mux_rfd3<="111";
